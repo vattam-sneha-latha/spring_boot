@@ -1,5 +1,6 @@
 package com.spring.core;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 /* loose coupling */
@@ -25,7 +26,8 @@ public class Car {
 
 // ANNOTATION BASED CONFIGURATION
 
-@Component
+@Component("car")
+// @Primary if we dont wanna use @Qualifier in Traveller and give high preference to any of the beans like car, bus, cycle
 public class Car implements Vehicle{ 
     @Override
     public void move(){

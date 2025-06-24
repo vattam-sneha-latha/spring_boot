@@ -39,6 +39,7 @@ public class Traveller {
     @Autowired
     public Traveller(@Qualifier("car") Vehicle vehicle){    // here car is the component name in Car class
         // public Traveller(@Qualifier("cycle") Vehicle vehicle)
+        // public Traveller(Vehicle vehicle) if we use @Primary in any of the car, bus, cycle classes (beans) then no need to use @Qualifier
         this.vehicle=vehicle;
     }
     public void startJourney(){
