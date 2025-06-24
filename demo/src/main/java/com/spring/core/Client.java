@@ -2,7 +2,9 @@ package com.spring.core;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
+@ComponentScan(basePackages = "com.spring.core")
 public class Client {
     public static void main(String[] args){
         /* loose coupling */
