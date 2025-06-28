@@ -25,16 +25,59 @@ public class MessageSender {
 
 @Component("messagesender")
 public class MessageSender {
+
+    
+
+    // Constuctor based dependecy
+    /* 
+    private MessageSenderInterface messageSenderInterface;
+
+    private MessageSenderInterface smsService;
+    @Autowired
+    public MessageSender(@Qualifier("smsservice") MessageSenderInterface messageSenderInterface){   // Constuctor based dependecy
+        this.messageSenderInterface=messageSenderInterface;
+        System.out.println("constrcutor based dependency innjection 1");
+    }
+
+    */
+    
+    // setter based dependency injection
+    /* 
+    private MessageSenderInterface messageSenderInterface;
+
+    private MessageSenderInterface smsService;
+    @Autowired
+    public void setMessageSenderInterface(@Qualifier("emailservice") MessageSenderInterface messageSenderInterface) {
+        this.messageSenderInterface = messageSenderInterface;
+        System.out.println("welcome to setter method");
+    }
+
+    @Autowired
+    public void setSmsService(@Qualifier("smsservice") MessageSenderInterface smsService) {
+        this.smsService = smsService;
+    }
+
+    */
+
+    // field based dependency injection
+
+
+    @Autowired
+    @Qualifier("emailservice")
     private MessageSenderInterface messageSenderInterface;
 
     @Autowired
-    public MessageSender(@Qualifier("smsservice") MessageSenderInterface messageSenderInterface){   // Constuctor dependecy
-        this.messageSenderInterface=messageSenderInterface;
-    }
+    @Qualifier("smsservice")
+    private MessageSenderInterface smsService;
 
     public void sendMessage(String message){
         this.messageSenderInterface.printMessage(message);
+        this.smsService.printMessage(message);
     }
+
+
+    
+
 }
 
 

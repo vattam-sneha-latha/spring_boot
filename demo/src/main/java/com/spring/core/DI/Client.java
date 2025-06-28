@@ -19,8 +19,8 @@ public class Client {
         /*dependency injection with spring framework */
         ApplicationContext applicationContext=new AnnotationConfigApplicationContext(AppConfig.class);
 
-        EmailService emailService=applicationContext.getBean(EmailService.class);  // we have to annoatate class with @Component in order to use getBean()
-        emailService.printMessage("Dependecy Injection using spring framework is successful");
+        // EmailService emailService=applicationContext.getBean(EmailService.class);  // we have to annoatate class with @Component in order to use getBean()
+        // emailService.printMessage("Dependecy Injection using spring framework is successful directly using email service");
 
         MessageSender messageSender=applicationContext.getBean(MessageSender.class);
         messageSender.sendMessage("Dependecy Injection using spring framework is successful");

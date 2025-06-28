@@ -27,6 +27,6 @@ public class EmailService implements MessageSenderInterface{
 
     @Override
     public void printMessage(String message){
-        System.out.println("The email message is "+message);
+        System.out.println("The email message "+message);
     }
 }

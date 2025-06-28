@@ -28,7 +28,7 @@ public class SMSService implements MessageSenderInterface{
 
     @Override
     public void printMessage(String message){
-        System.out.println("The SMS message is "+message);
+        System.out.println("The SMS message "+message);
     }
 }
 
