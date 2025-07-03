@@ -1,5 +1,6 @@
 package com.springboot.firstapp;
 
+import org.springframework.context.ApplicationContext;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,7 +8,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringBootFirstAppApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootFirstAppApplication.class, args);
+		ApplicationContext applicationContext=SpringApplication.run(SpringBootFirstAppApplication.class, args);
+		System.out.println("working");
+		/* 
+		String[] beanNames=applicationContext.getBeanDefinitionNames();
+		for(String name:beanNames){
+			System.out.println(name);
+		}
+			*/
+		
 	}
 
 }
